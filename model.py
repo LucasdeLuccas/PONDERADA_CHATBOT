@@ -21,7 +21,6 @@ class LocalLLM:
             return f.read()
 
     def generate_answer(self, user_query):
-        # Montar o prompt
         prompt = f"""Você é um assistente que responde sobre regras de futebol e campeões da Champions League e Libertadores. 
 Use o seguinte contexto para responder de forma sucinta e clara:
 {self.content}
