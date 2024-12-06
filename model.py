@@ -11,7 +11,7 @@ class LocalLLM:
         self.model_name = model_name
         self.content = self._load_content()
 
-      
+    
         openai.api_key = os.getenv("OPENAI_API_KEY")
         if not openai.api_key:
             raise ValueError("A chave OPENAI_API_KEY não está definida. Defina no .env ou como variável de ambiente.")
