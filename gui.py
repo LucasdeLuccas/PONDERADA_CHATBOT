@@ -5,7 +5,7 @@ class ChatGUI:
     def __init__(self, master, model_handler):
         self.master = master
         self.model_handler = model_handler
-        self.master.title("Chatbot de Regras de Futebol")
+        self.master.title("Chatbot de Futebol")
 
         self.text_area = ScrolledText(self.master, wrap='word', width=80, height=20)
         self.text_area.pack(padx=10, pady=10)

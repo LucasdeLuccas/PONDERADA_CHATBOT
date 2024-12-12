@@ -4,7 +4,7 @@ from model import LocalLLM
 from gui import ChatGUI
 
 def handle_user_query(user_query):
-    
+    # Lista de palavras-chave relacionadas a futebol
     keywords = ["futebol", "bola", "árbitro", "jogador", "time", "campeonato", "gol",
                 "libertadores", "champions", "cartão", "falta", "pênalti", "penalti",
                 "goleiro", "campo", "fifa", "ifab", "técnico", "treinador", "estádio",
@@ -19,10 +19,11 @@ def handle_user_query(user_query):
                 "Chuteira de Ouro"]
 
     normalized = user_query.lower()
-    
+    # Verifica se a pergunta do usuário contém alguma palavra-chave de futebol
     if not any(kw in normalized for kw in keywords):
         return "Desculpe, só respondo perguntas sobre futebol."
 
+    # Se a pergunta está relacionada a futebol, chama o modelo
     answer = llm.generate_answer(user_query)
     return answer
 

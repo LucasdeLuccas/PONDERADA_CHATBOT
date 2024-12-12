@@ -35,7 +35,7 @@ Resposta:
                 {"role": "user", "content": prompt}
             ],
             max_tokens=150,
-            temperature=0.7,
+            temperature=0.3,
         )
 
         answer = response.choices[0].message['content'].strip()
