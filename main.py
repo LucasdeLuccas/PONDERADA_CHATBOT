@@ -1,34 +1,94 @@
-import os
-import tkinter as tk
-from model import LocalLLM
-from gui import ChatGUI
+import streamlit as st
+from openai import OpenAI
+import nltk
+from nltk.corpus import stopwords
+import re
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings.openai import OpenAIEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+from dotenv import load_dotenv
 
-def handle_user_query(user_query):
-    # Lista de palavras-chave relacionadas a futebol
-    keywords = ["futebol", "bola", "árbitro", "jogador", "time", "campeonato", "gol",
-                "libertadores", "champions", "cartão", "falta", "pênalti", "penalti",
-                "goleiro", "campo", "fifa", "ifab", "técnico", "treinador", "estádio",
-                "torcida", "federacao", "liga", "defesa", "ataque", "zagueiro", "meio-campo",
-                "atacante", "lateral", "escanteio", "tiro de meta", "árbitros assistentes","liberta",
-                "impedimento", "drible", "cabeceio", "passe", "chute", "voleio", "bicicleta", "escalação",
-                "tática", "formação", "posse de bola", "marcação", "zonal", "homem a homem", "linha de fundo",
-                "trave", "travessão", "lateral", "escanteio", "tiro livre", "marcação cerrada", "var", "árbitro de vídeo",
-                "cartão amarelo", "cartão vermelho", "impedimento", "jogo limpo", "fair play", "fairplay", "juiz de linha", "árbitro assistente de vídeo",
-                "arbitragens controversas", "penalidades", "acréscimos", "Messi", "Ronaldo", "Pelé", "Maradona", "Neymar", "Mbappé", "Bola de Ouro",
-                "FIFA The Best", "Chuteira de Ouro", "Messi", "Ronaldo", "Pelé", "Maradona", "Neymar", "Mbappé", "Bola de Ouro", "FIFA The Best",
-                "Chuteira de Ouro"]
+class FutebolCuriosidadesChatbot:
+    def __init__(self):
+        load_dotenv()
 
-    normalized = user_query.lower()
-    # Verifica se a pergunta do usuário contém alguma palavra-chave de futebol
-    if not any(kw in normalized for kw in keywords):
-        return "Desculpe, só respondo perguntas sobre futebol."
+        self.client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+        try:
+            with open("rules_of_soccer.txt", "r", encoding="utf-8") as file:
+                self.document = file.read()
+        except FileNotFoundError:
+            self.document = "Regras não encontradas. Certifique-se de que o arquivo rules_of_soccer.txt está presente."
 
-    # Se a pergunta está relacionada a futebol, chama o modelo
-    answer = llm.generate_answer(user_query)
-    return answer
+        nltk.download("stopwords", quiet=True)
+
+        self.vector_store = self._load_document()
+        self.conversation_context = ""
+
+    def _load_document(self):
+        text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+        chunks = text_splitter.split_text(self.document)
+
+        embeddings = OpenAIEmbeddings()
+        vector_store = FAISS.from_texts(chunks, embeddings)
+        return vector_store
+
+    def extract_keywords(self, query):
+        stop_words = set(stopwords.words("portuguese"))
+        words = re.findall(r"\w+", query.lower())
+        keywords = [word for word in words if word not in stop_words]
+        return " ".join(keywords)
+
+    def generate_response(self, query):
+        self.conversation_context += f"Usuário: {query}\n"
+
+        keywords = self.extract_keywords(query)
+
+        if not any(kw in keywords for kw in ["futebol", "gol", "time", "jogador", "campeonato", "partida", "impedimento", "escanteio", "libertadores", "champions", "copa do mundo"]):
+            return "Desculpe, só respondo perguntas de futebol."
+
+        results = self.vector_store.similarity_search(query, k=2)
+        context = "\n".join([result.page_content for result in results])
+
+       
+        combined_context = f"Histórico da conversa:\n{self.conversation_context}\n\n{context}"
+
+        prompt = f"Com base no seguinte contexto:\n\n{combined_context}\n\nResponda à pergunta atual: {query}"
+
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4",
+                messages=[
+                    {"role": "system", "content": "Você é um assistente especializado em curiosidades sobre futebol. Certifique-se de responder com precisão ao contexto e lembrar do histórico da conversa."},
+                    {"role": "user", "content": prompt},
+                ],
+                max_tokens=300,
+                temperature=0.7,
+            )
+
+            answer = response.choices[0].message.content.strip()
+            self.conversation_context += f"Assistente: {answer}\n"
+            return answer
+        except Exception as e:
+            return f"Erro: {str(e)}"
+
+def main():
+    st.title("Chatbot de Curiosidades sobre Futebol")
+    chatbot = FutebolCuriosidadesChatbot()
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+    
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+  
+    if prompt := st.chat_input("Qual é a sua dúvida sobre futebol?"):
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        with st.chat_message("assistant"):
+            response = chatbot.generate_response(prompt)
+            st.markdown(response)
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 if __name__ == "__main__":
-    llm = LocalLLM(model_name='gpt-3.5-turbo')
-    root = tk.Tk()
-    app = ChatGUI(root, handle_user_query)
-    root.mainloop()
+    main()

@@ -1,60 +1,59 @@
 REGRAS BÁSICAS DO FUTEBOL
 
 Terreno de Jogo:
+- O campo deve ser retangular e marcado por linhas.
+- Possui duas áreas de meta, uma área penal, uma marca de pênalti, além das linhas laterais, linha de meio-campo e círculo central.
 
-O campo deve ser retangular e marcado por linhas.
-Possui duas áreas de meta, uma área penal, uma marca de pênalti, além das linhas laterais, linha de meio-campo e círculo central.
 Bola:
+- Deve ser esférica, com circunferência entre 68 e 70 cm.
+- Peso entre 410 e 450 g.
 
-Deve ser esférica, com circunferência entre 68 e 70 cm.
-Peso entre 410 e 450 g.
 Número de Jogadores:
+- Cada equipe é composta por 11 jogadores, incluindo o goleiro.
+- Um jogo não pode começar se uma das equipes tiver menos de 7 jogadores.
 
-Cada equipe é composta por 11 jogadores, incluindo o goleiro.
-Um jogo não pode começar se uma das equipes tiver menos de 7 jogadores.
 Equipamentos dos Jogadores:
+- Os jogadores devem usar camisa, calção, meias, caneleiras e chuteiras adequadas.
+- O goleiro usa uma camisa que o distinga dos demais jogadores e do árbitro.
 
-Os jogadores devem usar camisa, calção, meias, caneleiras e chuteiras adequadas. O goleiro usa uma camisa que o distinga dos demais jogadores e do árbitro.
 Árbitros e Oficiais de Jogo:
+- O árbitro principal é a autoridade máxima durante a partida, responsável por aplicar as regras e decidir faltas, infrações e gols.
+- Árbitros assistentes e, em competições de alto nível, o VAR (árbitro assistente de vídeo) auxiliam o árbitro principal.
 
-O árbitro principal é a autoridade máxima durante a partida, responsável por aplicar as regras e decidir faltas, infrações e gols.
-Árbitros assistentes e, em competições de alto nível, o VAR (árbitro assistente de vídeo) auxiliam o árbitro principal.
 Duração da Partida:
+- Uma partida oficial dura 90 minutos, divididos em dois tempos de 45 minutos, com intervalo de cerca de 15 minutos.
+- O árbitro pode adicionar tempo extra para compensar interrupções (acréscimos).
 
-Uma partida oficial dura 90 minutos, divididos em dois tempos de 45 minutos, com intervalo de cerca de 15 minutos.
-O árbitro pode adicionar tempo extra para compensar interrupções (acréscimos).
 Início e Reinício de Jogo:
+- O jogo começa com um pontapé inicial dado no círculo central.
+- Após um gol, a equipe que sofreu o gol dá o pontapé inicial para reiniciar a partida.
 
-O jogo começa com um pontapé inicial dado no círculo central.
-Após um gol, a equipe que sofreu o gol dá o pontapé inicial para reiniciar a partida.
 Bola em Jogo e Fora de Jogo:
+- A bola está em jogo enquanto estiver dentro do campo, exceto quando o árbitro interrompe a partida.
+- Fora de jogo é uma infração cometida por um jogador que esteja em posição de impedimento e interfira na jogada, seguindo critérios específicos.
 
-A bola está em jogo enquanto estiver dentro do campo, exceto quando o árbitro interrompe a partida.
-Fora de jogo é uma infração cometida por um jogador que esteja em posição de impedimento e interfira na jogada, seguindo critérios específicos.
 Faltas e Conduta Antidesportiva:
+- O árbitro decide se houve falta ou não com base nas ações dos jogadores (trancos irregulares, uso excessivo de força, empurrões, etc.).
+- Jogadores podem receber advertência (cartão amarelo) ou expulsão (cartão vermelho).
+- Acúmulo de cartões amarelos ou um cartão vermelho direto pode levar à suspensão do jogador para a próxima partida.
 
-O árbitro decide se houve falta ou não com base nas ações dos jogadores (trancos irregulares, uso excessivo de força, empurrões, etc.).
-Jogadores podem receber advertência (cartão amarelo) ou expulsão (cartão vermelho).
-Acúmulo de cartões amarelos ou um cartão vermelho direto pode levar à suspensão do jogador para a próxima partida.
 Tiro Livre e Pênalti:
+- Faltas resultam em tiro livre direto ou indireto, dependendo da natureza da infração.
+- Faltas dentro da área penal da equipe defensora resultam em pênalti, cobrado da marca específica.
 
-Faltas resultam em tiro livre direto ou indireto, dependendo da natureza da infração.
-Faltas dentro da área penal da equipe defensora resultam em pênalti, cobrado da marca específica.
 Lateral, Escanteio e Tiro de Meta:
+- Quando a bola sai pela linha lateral, o reinício é um arremesso lateral.
+- Se a bola ultrapassa a linha de fundo tocando por último um jogador da equipe defensora, é marcado escanteio.
+- Se for o atacante o último a tocar na bola antes de ela sair pela linha de fundo da equipe adversária, o reinício é com tiro de meta.
 
-Quando a bola sai pela linha lateral, o reinício é um arremesso lateral.
-Se a bola ultrapassa a linha de fundo tocando por último um jogador da equipe defensora, é marcado escanteio.
-Se for o atacante o último a tocar na bola antes de ela sair pela linha de fundo da equipe adversária, o reinício é com tiro de meta.
 Gol:
+- Um gol é marcado quando a bola ultrapassa completamente a linha de gol entre as traves e sob o travessão, desde que nenhuma infração tenha sido cometida.
 
-Um gol é marcado quando a bola ultrapassa completamente a linha de gol entre as traves e sob o travessão, desde que nenhuma infração tenha sido cometida.
 Goleiro:
-
-O goleiro pode tocar a bola com as mãos dentro da sua própria área penal.
-Caso o goleiro pegue a bola com a mão fora da área, será marcada falta.
+- O goleiro pode tocar a bola com as mãos dentro da sua própria área penal.
+- Caso o goleiro pegue a bola com a mão fora da área, será marcada falta.
 
 CAMPEÕES DA UEFA CHAMPIONS LEAGUE (INCLUINDO TAÇA DOS CLUBES CAMPEÕES EUROPEUS):
-
 1955/56: Real Madrid
 1956/57: Real Madrid
 1957/58: Real Madrid
@@ -92,7 +91,6 @@ CAMPEÕES DA UEFA CHAMPIONS LEAGUE (INCLUINDO TAÇA DOS CLUBES CAMPEÕES EUROPEU
 1989/90: Milan
 1990/91: Estrela Vermelha
 1991/92: Barcelona
-(Início da Era Champions League)
 1992/93: Marseille
 1993/94: Milan
 1994/95: Ajax
@@ -125,8 +123,7 @@ CAMPEÕES DA UEFA CHAMPIONS LEAGUE (INCLUINDO TAÇA DOS CLUBES CAMPEÕES EUROPEU
 2021/22: Real Madrid
 2022/23: Manchester City
 
-CAMPEÕES DA COPA LIBERTADORES DA AMÉRICA:
-
+CAMPEÕES DA LIBERTADORES DA AMÉRICA:
 1960: Peñarol
 1961: Peñarol
 1962: Santos
@@ -191,3 +188,5 @@ CAMPEÕES DA COPA LIBERTADORES DA AMÉRICA:
 2021: Palmeiras
 2022: Flamengo
 2023: Fluminense
+2024: Botafogo
+
